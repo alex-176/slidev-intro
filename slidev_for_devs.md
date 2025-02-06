@@ -29,7 +29,7 @@ class: text-center
 
 <br>
 
-![Revealjs](/images/qr-link.png) {style="display: inline;" width="200px"}
+![QR link to github.io](/images/qr-link.png) {style="display: inline;" width="200px"}
 
 
 ---
