@@ -27,6 +27,11 @@ class: text-center
 
 ## <logos-slidev /> **Slidev**
 
+<br>
+
+![Revealjs](/images/qr-link.png) {style="display: inline;" width="200px"}
+
+
 ---
 
 # Requirements
@@ -176,6 +181,8 @@ class: text-center
 ---
 ```
 
+[Learn more](https://sli.dev/custom/#headmatter)
+
 ---
 layout: iframe-right
 url: https://sli.dev/builtin/layouts
@@ -188,7 +195,9 @@ set if you want to change defaults
 ```yaml
 ---
 # layout https://sli.dev/builtin/layouts
+# most useful layouts:
 # image-left/image-right/iframe-left/iframe-right
+# two-cols-header/two-cols
 layout: two-cols
 # apply "text-center" style to the the next slide
 class: text-center
@@ -198,6 +207,9 @@ src: ./pages/external_slide.md
 hideInToc: false
 ---
 ```
+
+[Learn more](https://sli.dev/custom/#frontmatter)
+
 ---
 
 # Clicks Animations
@@ -411,6 +423,33 @@ try online:
 
 ---
 
+# Publish presentation to github
+
+<v-clicks>
+
+1. create a github repo. e.g. `slidev-into`
+2. build your project into into docs folder:<br>
+   slidev build -o DOCS-DIR-PATH YOUR-SLIDES.md --base /REPO-NAME <br>
+   example:
+   ```cmd
+   cd slidev-intro
+   slidev build -o docs slidev_for_devs.md --base /slidev-intro
+   ```
+4. add `docs` folder and push
+   ```cmd
+   git add docs
+   git commit -m "add docs"
+   git push
+   ```
+3. go to https://github.com/YOUR-NAME/REPO-NAME/settings/pages
+4. select `master` branch, add `/docs` and click `Save`
+5. result: https://YOUR-NAME.github.io/REPO-NAME<br>
+   example: https://alex-176.github.io/slidev-intro
+
+</v-clicks>
+
+---
+
 # Tips and tricks: headers, inline images, logos
 
 <br>
@@ -430,11 +469,11 @@ Logos <logos-slidev />
   <logos-slidev />
   ```
 
-Inline math formulas:  $\sqrt{3x-1}+(1+x)^2$
-  ```tex
+Inline math formulas ([with  latex](https://sli.dev/features/latex)):  $\sqrt{3x-1}+(1+x)^2$
+  ```latex
   $\sqrt{3x-1}+(1+x)^2$
   ```
-[Learn more about latex](https://sli.dev/features/latex)
+
 ---
 
 # Tips and tricks: slide numbers on all slides
