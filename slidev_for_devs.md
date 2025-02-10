@@ -244,7 +244,7 @@ right column content
 
 ---
 layout: image-right
-image: ./public/right-image.webp
+image: /right-image.webp
 hideInToc: true
 ---
 
@@ -256,7 +256,7 @@ hideInToc: true
 ```yaml
 ---
 layout: image-right
-image: ./public/right-image.webp
+image: /right-image.webp
 # regular local image does not work after build
 # we have to place images in 'public' folder
 # image: ./images/right-image.webp <<- not working after build
@@ -268,8 +268,6 @@ image: ./public/right-image.webp
 
 left column content
 
-use ./public/image format
-i had to copy public folder under docs manually
 ```
 
 ---
