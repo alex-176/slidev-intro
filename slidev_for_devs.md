@@ -15,6 +15,9 @@ transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 
+addons:
+    - slidev-component-progress
+
 # first slide part
 background: https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 # apply "all text in the center" style to the first silde
@@ -46,27 +49,18 @@ class: text-center
 
 ---
 
-# Best frameworks
-
-| Feature       | ![Revealjs](https://static.slid.es/reveal/logo-v1/reveal-white-text.svg){style="display: inline;" width="40%"} ([revealjs.com](https://revealjs.com/)) | <logos-slidev /> Slidev ([sli.dev](https://sli.dev/)) |
-|---------------|--------------------------------|--------------|
-| Markdown | Basic (with plugins) | Native |
-| VSCode support| no prerequisites<br>good integration<br>immediate update on edit| requires node.js and several npm packets<br>integration couyld be better<br>save to reflect changes|
-| Online editor| https://slides.com/ (payed) | https://sli.dev/new (free)|
-| in-slide editor | no | yes |
-| markdown docs | basic | very good (non-trivial cases covered) |
-| html amount | high | low |
-
----
-
-# Reveal.js vs Slidev conclusion
+# Frameworks - overview
 
 <br>
 
 ### <logos-slidev /> Slidev - if you prefer rich markdown functionality + small amount of html
 <br>
 
-### ![Revealjs](https://static.slid.es/reveal/logo-v1/reveal-white-text.svg) {style="display: inline;" width="17%"} - if you prefer html or basic markdown + a lot of html
+### ![Revealjs](https://static.slid.es/reveal/logo-v1/reveal-white-text.svg) {style="display: inline;" height="240px"} - if you prefer html or basic markdown + a lot of html
+
+<br>
+
+### lookatme - if you are a geek that prefers to present in terminal
 
 ---
 
@@ -80,13 +74,13 @@ class: text-center
     ```
     - global installation (not recommended but more convenient to use)
     ```cmd
-    npm i -g  @slidev/cli @slidev/theme-default @slidev/theme-seriph @slidev/types @iconify-json/logos vue
+    npm i -g  @slidev/cli @slidev/theme-default @slidev/theme-seriph @slidev/types @iconify-json/logos vue slidev-component-progress
     rem set NODE_PATH to force npm use global packages:
     setx NODE_PATH "%APPDATA%\npm\node_modules"
     ```
 3. `Slidev` extension for `VSCode`
     - install `Slidev` extension for `VSCode`
-    - if Slidev icon ![`Slidev`](https://raw.githubusercontent.com/slidevjs/slidev/refs/heads/main/assets/logo-mono-dark.svg) {style="display: inline;" width="30px"} does not appear in `Activity Bar`: in palette menu: `slidev: force enable slidev extension` 
+    - if ![`Slidev`](https://raw.githubusercontent.com/slidevjs/slidev/refs/heads/main/assets/logo-mono-dark.svg) {style="display: inline;" width="30px"} is not visible in `Activity Bar`: in palette menu: `slidev: force enable slidev extension` 
     - run `powershell` as administrator and execute
     ```powershell
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -95,9 +89,6 @@ class: text-center
 ---
 
 # Global vs Local installation
-
-<br>
-add to readme
 
 <style>th {text-align: center;}</style>
 | | Global installation | Local installation |
@@ -198,7 +189,7 @@ set if you want to change defaults
 # most useful layouts:
 # image-left/image-right/iframe-left/iframe-right
 # two-cols-header/two-cols
-layout: two-cols
+layout: two-cols-header
 # apply "text-center" style to the the next slide
 class: text-center
 # you can inject slides from other files 
@@ -209,6 +200,70 @@ hideInToc: false
 ```
 
 [Learn more](https://sli.dev/custom/#frontmatter)
+
+---
+layout: two-cols-header
+layoutClass: gap-4 #if you want to add some space b/w columns
+hideInToc: true
+---
+
+# Layout: two-cols-header
+
+::left::
+
+## Slide metadata:
+
+```yaml
+---
+layout: two-cols-header
+layoutClass: gap-4  #if you want to add some space b/w columns
+---
+
+# Slide header
+
+::left::
+
+## Left column header
+
+left column content
+
+::right::
+
+## Right column header
+
+right column content
+
+
+```
+
+::right::
+
+## Right column header
+
+right column content
+
+---
+layout: image-right
+image: /images/right-image.webp
+hideInToc: true
+---
+
+# Layout: image-right
+
+
+## Slide metadata:
+
+```yaml
+---
+layout: image-right
+image: /images/right-image.webp
+---
+
+# Slide header
+
+left column content
+
+```
 
 ---
 
@@ -347,20 +402,21 @@ architecture-beta
 <br>
 ```mermaid {scale: 0.5}
 sequenceDiagram
-Alice -> Bob : Hello!
+Alice ->> Bob : Hello!
 ```
 
 ::right::
 
 ## Mermaid supported diagrams:
 
-- Flow
-- Sequence
-- Class
-- State
-- Git
-- Pie
-- XYChart
+Pros: 
+- good online editing tools
+- GitHub support for markdown
+- good looking diagrams
+
+Supported graphs:
+- standard: Sequence, Class, State
+- Pie, XYChart, Git, Flow
 - and more
 
 try online (with graphical editor):
@@ -406,13 +462,12 @@ nwdiag {
 
 ## PlantUML supported diagrams:
 
-- Usecase
-- Network
-- Sequence
-- Class
-- State
-- Object
-- Activity
+Pros: 
+- wide range of supported graphs
+
+Supported graphs:
+- standard: Flow, Sequence, Class, State
+- Network, Usecase, Object, Activity
 - Json, Yaml, EBNF, Regex
 - and more
 
@@ -441,9 +496,9 @@ try online:
    git commit -m "add docs"
    git push
    ```
-3. go to https://github.com/YOUR-NAME/REPO-NAME/settings/pages
-4. select `master` branch, add `/docs` and click `Save`
-5. result: https://YOUR-NAME.github.io/REPO-NAME<br>
+3. go to https://github.com/YOUR-NAME/REPO-NAME/settings/pages<br>
+   select `master` branch, add `/docs` and click `Save`
+4. result: https://YOUR-NAME.github.io/REPO-NAME<br>
    example: https://alex-176.github.io/slidev-intro
 
 </v-clicks>
@@ -464,7 +519,7 @@ Inline image with the size you want ![Slidev](https://raw.githubusercontent.com/
   ![Alt Text](img_url) {style="display: inline;" width="20px"}
   ```
 
-Logos <logos-slidev />
+Logos. [<logos-slidev /> more info](https://sli.dev/features/icons)
   ```html
   <logos-slidev />
   ```
@@ -477,10 +532,9 @@ Inline math formulas ([with  latex](https://sli.dev/features/latex)):  $\sqrt{3x
 ---
 
 # Tips and tricks: slide numbers on all slides
-
 <br>
-
 add file `.global-top.vue`
+
 ```vue
 <template>
   <Scroll />
@@ -492,6 +546,15 @@ add file `.global-top.vue`
   </footer>
 </template>
 ```
+
+Progress bar. ([more about slidev-component-progress plugin](https://github.com/Smile-SA/slidev-component-progress))
+1. add `<Progress position="bottom"/>` into  `.global-top.vue` inside `<template> </template>`
+2. add to the all slides metadata:
+```yaml 
+addons:
+  - slidev-component-progress
+```
+  
 
 ---
 layout: two-cols
@@ -512,7 +575,6 @@ The title will be inferred from your slide content, or you can override it with 
 ::right::
 
 <Toc text-sm minDepth="1" maxDepth="1" />
-
 
 ---
 

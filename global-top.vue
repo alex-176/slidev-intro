@@ -6,4 +6,5 @@
   <footer v-else class="absolute bottom-1 left-0 right-2 text-right">
     <SlideCurrentNo/>/<SlidesTotal/>
   </footer>
+  <Progress level="1" position="bottom"/>
 </template>
