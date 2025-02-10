@@ -244,7 +244,7 @@ right column content
 
 ---
 layout: image-right
-image: "/images/right-image.webp"
+image: "https://raw.githubusercontent.com/alex-176/slidev-intro/refs/heads/main/images/right-image.webp"
 hideInToc: true
 ---
 
@@ -256,7 +256,11 @@ hideInToc: true
 ```yaml
 ---
 layout: image-right
-image: "/images/right-image.webp"
+image: https://raw.githubusercontent.com/alex-176/slidev-intro/refs/heads/main/images/right-image.webp
+# local image here does not work after build
+# so we we have to place images in a public folder
+# and refer to them with absolute path
+# image: /images/right-image.webp <<- does not work after build
 ---
 
 # Slide header
