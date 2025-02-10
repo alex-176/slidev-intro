@@ -261,6 +261,8 @@ image: https://raw.githubusercontent.com/alex-176/slidev-intro/refs/heads/main/i
 # so we we have to place images in a public folder
 # and refer to them with absolute path
 # image: /images/right-image.webp <<- does not work after build
+
+# see: https://sli.dev/guide/faq#assets-handling
 ---
 
 # Slide header
