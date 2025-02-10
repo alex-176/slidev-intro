@@ -268,6 +268,8 @@ image: ./public/right-image.webp
 
 left column content
 
+use ./public/image format
+i had to copy public folder under docs manually
 ```
 
 ---
