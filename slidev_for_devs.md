@@ -244,7 +244,7 @@ right column content
 
 ---
 layout: image-right
-image: "https://raw.githubusercontent.com/alex-176/slidev-intro/refs/heads/main/images/right-image.webp"
+image: ./public/right-image.webp
 hideInToc: true
 ---
 
@@ -256,11 +256,10 @@ hideInToc: true
 ```yaml
 ---
 layout: image-right
-image: https://raw.githubusercontent.com/alex-176/slidev-intro/refs/heads/main/images/right-image.webp
-# local image here does not work after build
-# so we we have to place images in a public folder
-# and refer to them with absolute path
-# image: /images/right-image.webp <<- does not work after build
+image: ./public/right-image.webp
+# regular local image does not work after build
+# we have to place images in 'public' folder
+# image: ./images/right-image.webp <<- not working after build
 
 # see: https://sli.dev/guide/faq#assets-handling
 ---
