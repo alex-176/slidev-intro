@@ -244,7 +244,7 @@ right column content
 
 ---
 layout: image-right
-image: /images/right-image.webp
+image: "/images/right-image.webp"
 hideInToc: true
 ---
 
@@ -256,7 +256,7 @@ hideInToc: true
 ```yaml
 ---
 layout: image-right
-image: /images/right-image.webp
+image: "/images/right-image.webp"
 ---
 
 # Slide header
