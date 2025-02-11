@@ -250,6 +250,7 @@ hideInToc: true
 
 # Layout: image-right
 
+<Comp src="/right-image.webp" />
 
 ## Slide metadata:
 
