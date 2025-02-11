@@ -50,14 +50,14 @@ class: text-center
 
 <br>
 
-### <logos-slidev /> Slidev - if you prefer rich markdown functionality + small amount of html
-<br>
+<v-clicks>
 
-### ![Revealjs](https://static.slid.es/reveal/logo-v1/reveal-white-text.svg) {style="display: inline;" height="240px"} - if you prefer html or basic markdown + a lot of html
+## <logos-slidev /> Slidev if you prefer rich markdown functionality + small amount of html<br><br>
+    
+## ![Revealjs](https://static.slid.es/reveal/logo-v1/reveal-white-text.svg) {style="display: inline;" height="240px"} - if you prefer html or basic markdown + a lot of html<br><br>
 
-<br>
-
-### lookatme - if you are a geek that prefers to present in terminal
+## lookatme - for geeks that prefer to present in terminal
+</v-clicks>
 
 ---
 
@@ -90,10 +90,11 @@ class: text-center
 <style>th {text-align: center;}</style>
 | | Global installation | Local installation |
 |-|---------------------|--------------------|
-| setup | complicated:<br>`npm i -g  @slidev/cli @slidev/types ...`<br>`setx NODE_PATH "%APPDATA%\npm\node_modules"` | simple:<br>`npm init slidev@latest`|
+| setup | `npm i -g  @slidev/cli @slidev/types ...`<br>`setx NODE_PATH "%APPDATA%\npm\node_modules"` | `npm init slidev@latest`|
 | working<br>directory<br>content | only files you add | 1. slides.md - default presentation<br>2. files related to slides.md<br>3. npm packages<br>4. .gitignore|
 | npm libs | `%APPDATA%\npm\node_modules` | your project directory |
 | start server | `slidev <YourFile>.md` | `npm run dev` |
+| when to use  | locally with your presentations (same plugins) | publish md file and allow others to edit|
 
 ---
 clicks: 1
@@ -376,6 +377,20 @@ int main()
 ````
 
 
+add code snippets inside  `md magic-move`
+```
+  ````md magic-move {lines: true}
+    ```cpp
+    int main();
+    
+    ```cpp
+    #include <iostream>
+    int main();
+    ```
+  ```` (4 tildes - the end of magic move)
+```
+
+
 ---
 layout: two-cols-header
 ---
@@ -505,17 +520,34 @@ try online:
 </v-clicks>
 
 ---
+layout: two-cols-header
+layoutClass: gap-4
+---
 
 # Tips and tricks: headers, inline images, logos
 
-<br>
-
-if a theme has left-aligned headers and you want center-aligned ones - set style for h1:
+::left::
+If you want center-aligned headers but a theme has left-aligned ones - set a style for h1:
   ```html
   <style> h1 { text-align: center; } </style>
   ```   
+<br>
+Center-align table headers - set style for th:
+```html
+<style>th {text-align: center;}</style>
+```
+Whole column alignment - |:--| syntax
 
-Inline image with the size you want ![Slidev](https://raw.githubusercontent.com/slidevjs/slidev/refs/heads/main/assets/logo-mono-dark.svg) {style="display: inline;" width="20px"}
+<style>th {text-align: center;}</style>
+
+| header | centered |
+|--------|----------|
+| left | content|
+
+
+::right::
+
+Inline images with the size you want ![Slidev](https://raw.githubusercontent.com/slidevjs/slidev/refs/heads/main/assets/logo-mono-dark.svg) {style="display: inline;" width="20px"}
   ```md
   ![Alt Text](img_url) {style="display: inline;" width="20px"}
   ```
@@ -529,6 +561,12 @@ Inline math formulas ([with  latex](https://sli.dev/features/latex)):  $\sqrt{3x
   ```latex
   $\sqrt{3x-1}+(1+x)^2$
   ```
+
+You can <span v-mark.red>underline</span> or <span v-mark.highlight.yellow>highlight</span> words. [More info](https://github.com/linkstrifer/react-rough-notation)
+```html
+You can <span v-mark.red>underline</span> or 
+<span v-mark.highlight.yellow>highlight</span> words.
+```
 
 ---
 
@@ -584,11 +622,12 @@ The title will be inferred from your slide content, or you can override it with 
 - <logos-slidev /> [Slidev Guide](https://sli.dev/guide/syntax)
 - <logos-youtube-icon /> [Slidev intro by Federico Tartarini](https://www.youtube.com/watch?v=oSgM6GoSwyY)
 - <logos-youtube-icon /> [Animations in Slidev by Federico Tartarini](https://www.youtube.com/watch?v=H53Vc4QfM4o&ab_channel=FedericoTartarini)
+- [Technical presentations with Slidev. blog post](https://www.wimdeblauwe.com/blog/2024/11/05/technical-presentations-with-slidev/)
 - [This presentation on github](https://github.com/alex-176/slidev-intro)
 
 <div style="text-align: center">
 
 ![QR link to github.io](/images/qr-link.png) {style="display: inline;" width="150px"}
 
-<PoweredBySlidev mt-15 />
+<PoweredBySlidev mt-10 />
 </div>
