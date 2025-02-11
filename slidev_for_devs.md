@@ -244,20 +244,18 @@ right column content
 
 ---
 layout: image-right
-image: /right-image.webp
+image: ./right-image.webp
 hideInToc: true
 ---
 
 # Layout: image-right
-
-<Comp src="/right-image.webp" />
 
 ## Slide metadata:
 
 ```yaml
 ---
 layout: image-right
-image: /right-image.webp
+image: ./right-image.webp
 # regular local image does not work after build
 # we have to place images in 'public' folder
 # image: ./images/right-image.webp <<- not working after build
