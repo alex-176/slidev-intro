@@ -30,9 +30,6 @@ class: text-center
 
 ## <logos-slidev /> **Slidev**
 
-<br>
-
-![QR link to github.io](/images/qr-link.png) {style="display: inline;" width="200px"}
 
 
 ---
@@ -587,7 +584,11 @@ The title will be inferred from your slide content, or you can override it with 
 - <logos-slidev /> [Slidev Guide](https://sli.dev/guide/syntax)
 - <logos-youtube-icon /> [Slidev intro by Federico Tartarini](https://www.youtube.com/watch?v=oSgM6GoSwyY)
 - <logos-youtube-icon /> [Animations in Slidev by Federico Tartarini](https://www.youtube.com/watch?v=H53Vc4QfM4o&ab_channel=FedericoTartarini)
+- [This presentation on github](https://alex-176.github.io/slidev-intro)
 
 <div style="text-align: center">
-<PoweredBySlidev mt-20 />
+
+![QR link to github.io](/images/qr-link.png) {style="display: inline;" width="150px"}
+
+<PoweredBySlidev mt-15 />
 </div>
